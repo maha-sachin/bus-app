@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { useSelector } from "react-redux";
+
+import classes from "./App.module.css";
+import BusForm from "./Components/busForm/BusForm.js";
+import { busStopList } from "./Components/busForm/busFormSlice";
+import Table from "./Components/table/Table";
 
 function App() {
+  const data = useSelector(busStopList);
+
+  const columns = [
+    { field: "RouteNo", header: "BusNo" },
+    { field: "Direction", header: "Direction" },
+    { field: "NormalizedSchedules", header: "WaitingTime" },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className={classes.AppContainer}>
+      <header className={classes.header}>
+        <h2>Bus-App</h2>
+        <h4>Finding Bus Details</h4>
       </header>
+      <BusForm />
+      {data.length > 0 && (
+        <Table class="table-left" data={data} columns={columns} />
+      )}
     </div>
   );
 }
 
 export default App;
+

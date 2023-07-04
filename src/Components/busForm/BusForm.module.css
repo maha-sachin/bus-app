@@ -1,0 +1,52 @@
+
+.label{
+    color: #ffffff; 
+    left: 20%;  
+    font-weight: bold;
+    display: flex;
+    width: 150px;
+    float: left;
+  }
+  .input{
+    text-align: left;
+    padding: 10px;
+      
+  }
+  .demo{
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content:center;
+  }
+  
+  .actions {
+      text-align:center;
+    }
+    
+    .actions button {
+      /* font: inherit; */
+      cursor: pointer;
+      background-color: transparent;
+      border: 1px solid #6d65f5;
+      padding: 0.5rem 2rem;
+      border-radius: 25px;
+      margin-left: 1rem;
+    }
+    
+    .actions button:hover,
+    .actions button:active {
+      background-color: #5b39ef;
+      border-color: #5b39ef;
+      color: white;
+    }
+    
+    .actions .button--alt {
+      color: #6d65f5;
+    }
+    
+    .actions .button {
+      background-color: #2820d0;
+      color: white;
+    }
+  
+  
